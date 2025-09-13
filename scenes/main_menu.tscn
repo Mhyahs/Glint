@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf6rn84wk2esu"]
+
+[ext_resource type="Script" uid="uid://crhemixo8vyrf" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.921569, 0.847059, 0.184314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
+bg_color = Color(0.309804, 0.572549, 0.992157, 0.494118)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.0605873, 0.486035, 0.837957, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 12
+shadow_color = Color(0.586259, 0.570955, 0.385934, 0.6)
+shadow_size = 8
+shadow_offset = Vector2(0, 5)
+
+[node name="MainMenu" type="Control"]
+process_mode = 2
+visible = false
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ekxnf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.521569, 0.521569, 0.521569, 0.286275)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -128.5
+offset_right = 265.0
+offset_bottom = 128.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="resume_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+size_flags_stretch_ratio = 15.85
+theme_override_colors/font_hover_pressed_color = Color(0.0588235, 0.486275, 0.839216, 1)
+theme_override_colors/font_hover_color = Color(0.921569, 0.847059, 0.184314, 1)
+theme_override_colors/font_color = Color(0.92, 0.8464, 0.184, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+toggle_mode = true
+action_mode = 0
+text = "ReSume
+"
+text_overrun_behavior = 2
+
+[node name="restart_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+size_flags_stretch_ratio = 15.85
+theme_override_colors/font_hover_pressed_color = Color(0.0588235, 0.486275, 0.839216, 1)
+theme_override_colors/font_hover_color = Color(0.921569, 0.847059, 0.184314, 1)
+theme_override_colors/font_color = Color(0.92, 0.8464, 0.184, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+toggle_mode = true
+action_mode = 0
+text = "ReStart"
+text_overrun_behavior = 2
+
+[node name="exit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+size_flags_stretch_ratio = 15.85
+theme_override_colors/font_hover_pressed_color = Color(0.0588235, 0.486275, 0.839216, 1)
+theme_override_colors/font_hover_color = Color(0.921569, 0.847059, 0.184314, 1)
+theme_override_colors/font_color = Color(0.92, 0.8464, 0.184, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+text = "Exit"
+text_overrun_behavior = 2
+
+[connection signal="pressed" from="VBoxContainer/resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

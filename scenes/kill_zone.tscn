@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2p70xyfed17t"]
+
+[ext_resource type="Script" uid="uid://dor36735qppv4" path="res://scripts/kill_zone.gd" id="1_kebdr"]
+[ext_resource type="AudioStream" uid="uid://cxtql60qrxdng" path="res://assets/brackeys_platformer_assets/sounds/power_up.wav" id="2_l4ff3"]
+
+[node name="KillZone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_kebdr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.598
+one_shot = true
+
+[node name="powerUpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_l4ff3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

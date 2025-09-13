@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://b20l2fed6ilup"]
+
+[ext_resource type="Script" uid="uid://c43b837e13kwj" path="res://scripts/enemy_01.gd" id="1_ekgiw"]
+[ext_resource type="Texture2D" uid="uid://by403fgiayti5" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_kto0h"]
+[ext_resource type="PackedScene" uid="uid://b2p70xyfed17t" path="res://scenes/kill_zone.tscn" id="2_ekgiw"]
+[ext_resource type="AudioStream" uid="uid://cb87af0ho1mb8" path="res://assets/brackeys_platformer_assets/sounds/hurt.wav" id="4_yl44n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl44n"]
+atlas = ExtResource("1_kto0h")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m36a8"]
+atlas = ExtResource("1_kto0h")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtsts"]
+atlas = ExtResource("1_kto0h")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syuvx"]
+atlas = ExtResource("1_kto0h")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_reewy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl44n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m36a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtsts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syuvx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46btu"]
+size = Vector2(14, 12)
+
+[node name="enemy01" type="AnimatableBody2D"]
+script = ExtResource("1_ekgiw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_reewy")
+autoplay = "default"
+frame_progress = 0.10748
+
+[node name="KillZone" parent="." instance=ExtResource("2_ekgiw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("RectangleShape2D_46btu")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(13, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-13, 0)
+
+[node name="hurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_yl44n")
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
