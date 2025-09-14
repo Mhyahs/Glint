@@ -1,6 +1,6 @@
 # Glint
 
-Glint is a fun and challenging game developed by Mhyahs. Navigate through exciting levels, collect coins, and defeat bosses to win!
+Glint is a fun and challenging game developed by Mhyahs. Navigate through exciting levels, collect coins, and avoid enemies to win!
 
 ## Download
 
@@ -10,16 +10,15 @@ Glint is a fun and challenging game developed by Mhyahs. Navigate through exciti
 
 - Explore different levels full of obstacles and surprises.
 - Collect coins to increase your score.
-- Face unique bosses at the end of each world.
-- Use power-ups and special abilities to overcome difficult challenges.
+- Avoid or outmaneuver enemies to reach the end of each level.
+- Use your skills to navigate each stage—there are no bosses, just regular enemies to challenge your reflexes.
 
 ## Controls
 
-- **Arrow Keys**: Move your character  
-- **Spacebar**: Jump  
-- **Z**: Attack  
-- **X**: Use special ability  
-- **Esc**: Pause the game  
+- **Move Left:** `A` or `Left Arrow`  
+- **Move Right:** `D` or `Right Arrow`  
+- **Jump:** `W`, `Up Arrow`, or `Space`  
+- **Pause/Menu:** `Esc`  
 
 ## Screenshots
 
@@ -31,8 +30,8 @@ Here are some screenshots from Glint.
 ![Collecting Coins](assets/screenshots/collecting_coins.jpg)  
 *Collecting coins in action*
 
-![Boss Fight](assets/screenshots/enemy.jpg)  
-*little enemies on way*
+![Enemies](assets/screenshots/enemy.jpg)  
+*Little enemies on the way*
 
 ![Pause Menu](assets/screenshots/pause_menu.jpg)  
 *The game's pause menu*
@@ -49,7 +48,7 @@ This game was made with the help of the following tutorial:
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE(MIT License)) file for details.
 
 ---
 
