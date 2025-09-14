@@ -2,6 +2,10 @@
 
 Glint is a fun and challenging game developed by Mhyahs. Navigate through exciting levels, collect coins, and defeat bosses to win!
 
+## Download
+
+[Click here to download the game (Google Drive)](https://drive.google.com/file/d/1nm6_7VpVNTWSbCE5_4-gpdvP2MJcAlYX/view?usp=sharing)
+
 ## Gameplay
 
 - Explore different levels full of obstacles and surprises.
