@@ -19,7 +19,7 @@ Glint is a fun and challenging game developed by Mhyahs. Navigate through exciti
 
 ## Screenshots
 
-Here are some screenshots from Glint. Make sure to upload your images to `assets/screenshots/` and update the paths if needed.
+Here are some screenshots from Glint.
 
 ![Gameplay](assets/screenshots/game_play.png)  
 *gameplay*
